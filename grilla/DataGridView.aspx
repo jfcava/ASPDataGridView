@@ -4,6 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
     <div class="container-md">
+        <hr />
         <%-- Pongo en false el AutoGenerateColumns, y eligo que columnas ver y de que tipo son.--%>
         <asp:GridView runat="server" ID="dgvEmpleados" CssClass="table table-dark table-bordered" AutoGenerateColumns="false">
             <Columns>
@@ -14,8 +15,9 @@
                 <asp:CheckBoxField HeaderText="Senior?" DataField="Senior" />
                 <asp:BoundField HeaderText="Notas" DataField="Notas" />
                 <asp:BoundField HeaderText="Fecha Ingreso" DataField="FechaIngreso" />
+                <asp:CheckBoxField HeaderText="Afiliado?" DataField="Afiliado" />
             </Columns>
         </asp:GridView>
-        <a href="EmpleadoForm.aspx">Agregar</a>
+        <asp:Button Text="Agregar" CssClass="btn btn-primary" id="btnAgregar" OnClick="btnAgregar_Click" runat="server" />
     </div>
 </asp:Content>

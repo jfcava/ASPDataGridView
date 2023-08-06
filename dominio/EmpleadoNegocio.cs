@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 
-namespace ejemplo1
+namespace dominio
 {
     public class EmpleadoNegocio
     {
@@ -22,6 +22,7 @@ namespace ejemplo1
             lista[0].Senior = false;
             lista[0].Notas = "Es un empleado medio vago";
             lista[0].FechaIngreso = DateTime.Now;
+            lista[0].Afiliado = true;
 
             lista[1].Id = 1;
             lista[1].Nombre = "Carlos";

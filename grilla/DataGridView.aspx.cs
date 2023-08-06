@@ -1,4 +1,4 @@
-﻿using ejemplo1;
+﻿using dominio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +12,19 @@ namespace grilla
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            EmpleadoNegocio negocio = new EmpleadoNegocio();
-            dgvEmpleados.DataSource = negocio.listar();
+            if (Session["listaEmpleados"] == null)
+            {
+                EmpleadoNegocio negocio = new EmpleadoNegocio();
+                Session.Add("listaEmpleados", negocio.listar());
+            }
+
+            dgvEmpleados.DataSource = Session["listaEmpleados"];
             dgvEmpleados.DataBind();
+        }
+
+        protected void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("EmpleadoForm.aspx", false);
         }
     }
 }

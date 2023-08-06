@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ejemplo1
+namespace dominio
 {
     public class Empleado
     {
@@ -15,5 +15,6 @@ namespace ejemplo1
         public bool Senior { get; set; }
         public  string Notas { get; set; }
         public DateTime FechaIngreso { get; set; }
+        public bool Afiliado { get; set; }
     }
 }

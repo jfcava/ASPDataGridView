@@ -13,5 +13,10 @@ namespace grilla
         {
 
         }
+
+        protected void btnIraVerlo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("DataGridView.aspx", false);
+        }
     }
 }
