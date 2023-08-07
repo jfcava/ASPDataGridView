@@ -9,7 +9,19 @@
     <div class="row">
         <div class="col-4"></div>
         <div class="col-4">
+            <%if (Request.QueryString["Id"] == null)
+                {  %>
             <h3>Agregar nuevo Empleado</h3>
+            <%}
+                else
+                {  %>
+            <h3>Modificar Empleado</h3>
+            <%} %>
+            <hr />
+             <div class="mb-3">
+                <asp:Label Text="Id:" runat="server" CssClass="form-label" />
+                <asp:TextBox runat="server" ID="txtId" CssClass="form-control" />
+            </div>
             <div class="mb-3">
                 <asp:Label Text="Nombre:" runat="server" CssClass="form-label" />
                 <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control" />
@@ -47,7 +59,10 @@
                 </div>
             </div>
             <asp:Button Text="Aceptar" runat="server" ID="btnAceptar" CssClass="btn btn-primary" OnClick="btnAceptar_Click" />
+            <asp:Button Text="Eliminar" runat="server" ID="btnEliminar" CssClass="btn btn-primary" onclick="btnEliminar_Click" />            
+            <asp:Button Text="Modificar" runat="server" ID="btnModificar" CssClass="btn btn-primary" onclick="btnModificar_Click" />            
             <asp:Button Text="Cancelar" runat="server" ID="btnCancelar" CssClass="btn btn-primary" onclick="btnCancelar_Click" />            
+
 
         </div>
         <div class="col-4"></div>

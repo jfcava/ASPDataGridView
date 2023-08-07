@@ -26,5 +26,11 @@ namespace grilla
         {
             Response.Redirect("EmpleadoForm.aspx", false);
         }
+
+        protected void dgvEmpleados_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id = int.Parse(dgvEmpleados.SelectedDataKey.Value.ToString());
+            Response.Redirect("EmpleadoForm.aspx?Id=" + id);
+        }
     }
 }
